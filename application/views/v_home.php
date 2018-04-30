@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,7 +25,7 @@
                     <div class="col-lg-3 CenterContainer menuDecoration wrapCenter logo" id="logo">
                         <!--<div class="CenterContainer-Child" style="height:80px;width:270px;background:blue">placeholder</div>-->
                         <div class="innerCenter">
-                            <img src="img/logo.png" style="width:100%" />
+                            <img src="<?php echo base_url() ?>img/logo.png" style="width:100%" />
                         </div>
                     </div>
                     <div class="col-lg-7  menuDecoration wrapCenter">
@@ -78,7 +79,19 @@
                     </div>
                     <div class="col-lg-2 toolbar-right wrapCenter2">
                         <div class="innerCenter" style="padding:0px">
-                            <button type="button" class="btn btn-warning">Sign Up / Login</button>
+                            <?php 
+                                if($this->session->has_userdata('username')){
+                            ?>
+                            <a href="<?php echo base_url() ?>Profile"><button type="button" class="btn btn-warning"><?php echo $this->session->userdata('nama') ?></button></a>
+                            <a href="<?php echo base_url() ?>Jual"><button type="button" class="btn btn-warning">Jual Buku</button></a>
+                            <?php
+                                } else {
+
+                            ?>
+                            <a href="<?php echo base_url() ?>Login"><button type="button" class="btn btn-warning">Sign Up / Login</button></a>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -91,20 +104,20 @@
             <div class="row paddingLR50px">
                 <div class="col-lg-2 category rightSideBar" style="padding:0">
                     <div class="list-group" id="kategoriBar">
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi1</a>
-                        <a href="#" class="list-group-item list-group-item-action  menuKategori">Fiksi2</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi3</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi4</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi5</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi6</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi7</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi8</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi9</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi10</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi11</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi12</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi13</a>
-                        <a href="#" class="list-group-item list-group-item-action menuKategori">Fiksi14</a>
+                        <a href="search?kategori=Seks" class="list-group-item list-group-item-action menuKategori">Seks</a>
+                        <a href="search?kategori=Komputer" class="list-group-item list-group-item-action menuKategori">Komputer</a>
+                        <a href="search?kategori=Novel" class="list-group-item list-group-item-action menuKategori">Novel</a>
+                        <a href="search?kategori=Komik" class="list-group-item list-group-item-action menuKategori">Komik</a>
+                        <a href="search?kategori=Horor" class="list-group-item list-group-item-action menuKategori">Horor</a>
+                        <a href="search?kategori=Cinta" class="list-group-item list-group-item-action menuKategori">Cinta</a>
+                        <a href="search?kategori=Filsafat" class="list-group-item list-group-item-action menuKategori">Filsafat</a>
+                        <a href="search?kategori=Hukum" class="list-group-item list-group-item-action menuKategori">Hukum</a>
+                        <a href="search?kategori=Sosial" class="list-group-item list-group-item-action menuKategori">Sosial</a>
+                        <a href="search?kategori=Ekonomi" class="list-group-item list-group-item-action menuKategori">Ekonomi</a>
+                        <a href="search?kategori=Matematika" class="list-group-item list-group-item-action menuKategori">Matematika</a>
+                        <a href="search?kategori=Kimia" class="list-group-item list-group-item-action menuKategori">Kimia</a>
+                        <a href="search?kategori=Bahasa" class="list-group-item list-group-item-action menuKategori">Bahasa</a>
+                        <a href="search?kategori=Lain-Lain" class="list-group-item list-group-item-action menuKategori">Lain Lain</a>
                     </div>
                 </div>
                 <div class="col-lg-10 slider">
@@ -116,21 +129,21 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="img/banner/banner1.jpg" alt="First slide">
+                                <img class="d-block img-fluid" src="<?php echo base_url() ?>img/banner/banner1.jpg" alt="First slide">
                                 <div class="carousel-caption">
                                     <h3>Buku adalah jendela dunia</h3>
                                     <p>Buku bekas tidak masalah, yang penting ilmunya</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="img/banner/banner2.jpg" alt="Second slide">
+                                <img class="d-block img-fluid" src="<?php echo base_url() ?>img/banner/banner2.jpg" alt="Second slide">
                                 <div class="carousel-caption">
                                     <h3>Buku adalah keajaiban yang unik</h3>
                                     <p>Tidak ada teman yang selalu ada seperti buku</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block img-fluid" src="img/banner/banner3.jpg" alt="Third slide">
+                                <img class="d-block img-fluid" src="<?php echo base_url() ?>img/banner/banner3.jpg" alt="Third slide">
                                 <div class="carousel-caption">
                                     <h3>Buku adalah sumber ilmu pengetahuan</h3>
                                     <p>Membaca tidak akan merugikanmu</p>
@@ -150,7 +163,7 @@
             </div>
             <div class="row paddingLR50px" style="padding-top: 30px;margin-bottom: 30px;">
                 <div class="col-md">
-                    <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(img/banner/banner4.jpg);">
+                    <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(<?php echo base_url() ?>img/banner/banner4.jpg);">
                         <div class="innerCenter">
                             <h4 class="threeSectionName">
                                 Koleksi Buku ZZZZ
@@ -167,7 +180,7 @@
                 </div>
                 <div class="col-md">
                     <div>
-                        <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(img/banner/banner5.jpg);">
+                        <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(<?php echo base_url() ?>img/banner/banner5.jpg);">
                             <div class="innerCenter">
                                 <h4 class="threeSectionName">
                                     zzzzzzzz
@@ -184,7 +197,7 @@
                 </div>
                 <div class="col-md">
                     <div>
-                        <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(img/banner/banner6.jpg);">
+                        <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(<?php echo base_url() ?>img/banner/banner6.jpg);">
                             <div class="innerCenter">
                                 <h4 class="threeSectionName">
                                     Hanya
@@ -214,7 +227,7 @@
                             <div class="list-group-item">
                                 <div class="row">
                                     <div class="col wrapCenter">
-                                        <img src="img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
+                                        <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
                                     </div>
                                     <div class="col SideBarThumbNail">
                                         <b>Nama buku gj </b>
@@ -225,7 +238,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col wrapCenter">
-                                        <img src="img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
+                                        <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
                                     </div>
                                     <div class="col SideBarThumbNail">
                                         <b>Nama buku gj </b>
@@ -236,7 +249,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col wrapCenter">
-                                        <img src="img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
+                                        <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
                                     </div>
                                     <div class="col SideBarThumbNail">
                                         <b>Nama buku gj </b>
@@ -265,7 +278,7 @@
                                 </div>
                                 <div class="row wrapCenter">
                                     <div class="innerCenter innerCenter-1rem">
-                                        <img src="img/face.jpg" class="rounded-circle tilesHorizontalThumbNail-Small thumbnailTestimonial" />
+                                        <img src="<?php echo base_url() ?>img/face.jpg" class="rounded-circle tilesHorizontalThumbNail-Small thumbnailTestimonial" />
                                     </div>
                                     <div class="innerCenter innerCenter-1rem">
                                         <h5>Aedhelio Homo</h5>
@@ -285,7 +298,7 @@
                     <div class="row terpopulerChild paddingLR5percent">
                         <div class="col-md thumbVertical">
                             <div class="row wrapCenter">
-                                <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
+                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
                             </div>
                            
                             <div class="row tilesVerticalIcons">
@@ -321,7 +334,7 @@
                         </div>
                         <div class="col-md thumbVertical">
                             <div class="row wrapCenter">
-                                <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
+                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
                             </div>
                            
                             <div class="row tilesVerticalIcons">
@@ -357,7 +370,7 @@
                         </div>
                         <div class="col-md thumbVertical">
                             <div class="row wrapCenter">
-                                <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
+                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
                             </div>
                             
                             <div class="row tilesVerticalIcons">
@@ -393,7 +406,7 @@
                         </div>
                         <div class="col-md thumbVertical">
                             <div class="row wrapCenter">
-                                <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
+                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
                             </div>
                             
                             <div class="row tilesVerticalIcons">
@@ -435,7 +448,7 @@
                         <div class="col-md">
                             <div class="row bekasChild">
                                 <div class="col-5 wrapCenter">
-                                    <img src="img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
+                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
                                 </div>
                                 <div class="col horizdescBox">
                                     <h4>Nama buku gj </h4>
@@ -449,7 +462,7 @@
                             </div>
                             <div class="row bekasChild">
                                 <div class="col-5 wrapCenter">
-                                    <img src="img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
+                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
                                 </div>
                                 <div class="col horizdescBox">
                                     <h4>Nama buku gj </h4>
@@ -465,7 +478,7 @@
                         <div class="col-md">
                             <div class="row bekasChild">
                                 <div class="col-5 wrapCenter">
-                                    <img src="img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
+                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
                                 </div>
                                 <div class="col horizdescBox">
                                     <h4>Nama buku gj </h4>
@@ -479,7 +492,7 @@
                             </div>
                             <div class="row bekasChild">
                                 <div class="col-5 wrapCenter">
-                                    <img src="img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
+                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
                                 </div>
                                 <div class="col horizdescBox">
                                     <h4>Nama buku gj </h4>
@@ -523,7 +536,7 @@
             <div class="row sitemap max1080p">
                 <div class="col-md">
                     <div class="sitemap-child">
-                        <img src="img/logo2.png" />
+                        <img src="<?php echo base_url() ?>img/logo2.png" />
                         <p>
                             <br />
                             blababalballbablasljsbaflbsaf3

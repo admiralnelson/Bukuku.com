@@ -18,9 +18,43 @@ class Search extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model("m_buku");
+	}
 	public function index()
 	{
 		$this->load->view('v_search');
+	}
+
+	public function getBukuJson(){
+		$mode = $this->input->post('mode');
+		$value = $this->input->post('value');
+		switch ($mode) {
+			case 'kategori':
+				$buku = $this->m_buku->getByKategori($value);
+				break;
+			case 'title':
+				$buku = $this->m_buku->getByJudul($value);
+				break;
+			default:
+				$buku = array();
+				break;
+		}
+		
+		$data_buku = array();
+		foreach($buku as $b){
+			array_push($data_buku, array(
+				'title' => $b['JUDUL'],
+				'rating' => $b['RATING'],
+				'price' => $b['HARGA'],
+				'thumb' => "uploads/".$b['GAMBAR'],
+				'bekas' => $b['BEKAS']
+			));
+		}
+		echo json_encode($data_buku);
+		
 	}
 	
 }

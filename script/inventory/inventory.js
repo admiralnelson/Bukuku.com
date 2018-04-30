@@ -108,10 +108,20 @@ function OpenJSON()
        
 
     }
+    var query = window.location.search.substring(1);
+    var vars = query.split('&')[0];
+    var mode = vars.split('=')[0];
+    var value = vars.split('=')[1];
+    $.post("search/getBukuJson", {mode: mode, value: value}  ,  function(jo){
+        var jp = $.parseJSON(jo);
 
-    jQuery.getJSON("data/data.json", ProcessJson);
+        ProcessJson(jp);
+        $("#result-txt").text('Hasil pencarian untuk: "'+value+'"');
+        //jQuery.getJSON(jo, ProcessJson);
 
-    console.log("json procedure completed!");
+        console.log("json procedure completed!");
+    });
+    
 
 }
 

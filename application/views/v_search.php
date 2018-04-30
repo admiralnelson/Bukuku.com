@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-lg-7  menuDecoration wrapCenter">
                         <div class="input-group innerCenter">
-                            <input type="text" class="form-control" aria-label="">
+                            <input type="text" class="form-control" name="title" id="cari-title" aria-label="">
                             <div class="input-group-append">
                                 <div class="dropdown show">
                                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,7 +44,18 @@
                                         <a class="dropdown-item" href="#">Szzzzzzzss</a>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-warning">Cari</button>
+                                <script type="text/javascript">
+                                    function cari(){
+                                        var title = $("#cari-title").val();
+                                        window.open("search?title="+title, '_self');
+                                    }
+                                    $('input[type=text]').on('keydown', function(e) {
+                                        if (e.which == 13) {
+                                            cari();
+                                        }
+                                    });
+                                </script>
+                                <button type="button" class="btn btn-warning" onclick="cari()">Cari</button>
                             </div>
                         </div>
                     </div>
@@ -289,7 +300,7 @@
                 <!--CONTENT-->
                 <div class="col-md-10 highlight max1080p">
                     <div class="titleSection" style="margin-top:5px">
-                        <h2>Hasil pencarian untuk: "{searchTerms}"</h2>
+                        <h2 id="result-txt">Hasil pencarian untuk: "{searchTerms}"</h2>
                     </div>
                     <div class="col" id="Content">
                         

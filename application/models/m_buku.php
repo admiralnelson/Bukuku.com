@@ -9,21 +9,31 @@ class M_Buku extends CI_Model {
 		$this->load->database();
 	}
 
-	public function getAllBuku(){
+	public function getAll(){
 		$query = $this->db->get('buku');
-		return $query->row_array();
+		return $query->result_array();
 	}
 
-	public function insertBuku($buku){
-		$this->db->insert('buku', $buku);
+	public function getByKategori($kategori){
+		$query = $this->db->query("SELECT * FROM buku WHERE kategori = '$kategori'");
+		return $query->result_array();
 	}
 
-	public function deleteBuku($id){
+	public function getByJudul($judul){
+		$query = $this->db->query("SELECT * FROM buku WHERE judul LIKE '%$judul%'");
+		return $query->result_array();
+	}
+
+	public function insert($buku){
+		return $this->db->insert('buku', $buku);
+	}
+
+	public function delete($id){
 		$this->db->where('id_buku',$id);
 		$this->db->delete('buku');
 	}
 	
-	public function updateBuku($id, $buku){
+	public function update($id, $buku){
 		$this->db->where('id_buku', $id);
 		$this->db->update('buku', $buku);
 	}
