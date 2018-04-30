@@ -88,6 +88,10 @@ function OpenJSON()
         console.log(barang);
         g_Inventory.push(barang);
     }
+    function DetailHandler(){
+        var id = jQuery(this).find(".info").attr('codeBarang');
+        window.open("buy?id="+id, '_self');
+    }
     function ProcessJson(data)
     {
         try
@@ -96,6 +100,7 @@ function OpenJSON()
             console.log("json loaded " + data + "/eof");
             LoadItemList(g_AvailableStocks);
             jQuery(".buy").click(BuyHandler);
+            jQuery(".detail").click(DetailHandler);
             Main();
             ShowSnackbar("ProcessJson() Berhasil!");
         }

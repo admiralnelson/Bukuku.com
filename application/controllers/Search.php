@@ -50,7 +50,8 @@ class Search extends CI_Controller {
 				'rating' => $b['RATING'],
 				'price' => $b['HARGA'],
 				'thumb' => "uploads/".$b['GAMBAR'],
-				'bekas' => $b['BEKAS']
+				'bekas' => $b['BEKAS'],
+				'id' => $b['ID_BUKU']
 			));
 		}
 		echo json_encode($data_buku);

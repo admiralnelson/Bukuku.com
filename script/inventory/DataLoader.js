@@ -31,8 +31,8 @@ function LoadItemList(input)
                 item +=         '<div class="col thumbnailAction">';
                 item +=             '<span class="fa fa-exchange" aria-hidden="true"></span>';
                 item +=        '</div>';
-                item +=        '<div class="col thumbnailAction">';
-                item +=            '<span class="fa fa-eye" aria-hidden="true"></span>';
+                item +=        '<div class="col thumbnailAction detail">';
+                item +=            '<span class="fa fa-eye info" codeBarang="'+obj.id+'" aria-hidden="true"></span>';
                 item +=        '</div>';
                 item +=     '</div>';
 
@@ -43,7 +43,10 @@ function LoadItemList(input)
                 item +=     '</div>';
                 item +=     '<div class="row  wrapCenter">';
                 item +=         '<div class="rating innerCenter-0">';
-                item +=             '*****'; //GANTI
+                for(var s=1; s<=5; s++){
+                    item += (s<=obj.rating ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>');
+                }
+                
                 item +=          '</div>';
                 item +=     '</div>';
                 item +=     '<div class="row wrapCenter">';

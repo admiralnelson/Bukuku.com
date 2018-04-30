@@ -24,6 +24,36 @@ class M_Buku extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getById($id){
+		$query = $this->db->query("SELECT * FROM buku WHERE id_buku = '$id'");
+		return $query->result_array();
+	}
+
+	public function getRelated($judul, $kategori, $id){
+		$query = $this->db->query("SELECT * FROM buku WHERE (judul LIKE '%$judul%' OR kategori LIKE '%$kategori%') AND id_buku <> '$id' LIMIT 4");
+		return $query->result_array();
+	}
+
+	public function getRelatedRest($judul, $kategori, $id, $rest){
+		$query = $this->db->query("SELECT * FROM buku WHERE (judul NOT LIKE '%$judul%' AND kategori NOT LIKE '%$kategori%') AND id_buku <> '$id' LIMIT $rest");
+		return $query->result_array();
+	}
+
+	public function getTerpopuler($count){
+		$query = $this->db->query("SELECT * FROM buku ORDER BY rating DESC LIMIT $count");
+		return $query->result_array();
+	}
+
+	public function getBekasTerpopuler($count){
+		$query = $this->db->query("SELECT * FROM buku WHERE bekas=true ORDER BY rating DESC LIMIT $count");
+		return $query->result_array();
+	}
+
+	public function getNew($count){
+		$query = $this->db->query("SELECT * FROM buku LIMIT $count");
+		return $query->result_array();
+	}
+
 	public function insert($buku){
 		return $this->db->insert('buku', $buku);
 	}

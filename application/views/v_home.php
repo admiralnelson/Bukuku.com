@@ -125,87 +125,19 @@
             </div>
             <div class="row paddingLR50px">
                 <!--SIDEBARS-->
-                <div class="col-md-2  rightSideBar">
-                    <div class="row sidebar">
-                        <div class="list-group" style="width:100%">
-                            <div class="list-group-item list-group-item-secondary titleBar">
-                                <h5>Buku Terbaru.</h5>
-                            </div>
-                            <div class="list-group-item">
-                                <div class="row">
-                                    <div class="col wrapCenter">
-                                        <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
-                                    </div>
-                                    <div class="col SideBarThumbNail">
-                                        <b>Nama buku gj </b>
-                                        <b>****</b>
-                                        Rp 1
-                                        <button type="button" class="btn btn-warning">Beli</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col wrapCenter">
-                                        <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
-                                    </div>
-                                    <div class="col SideBarThumbNail">
-                                        <b>Nama buku gj </b>
-                                        <b>****</b>
-                                        Rp 1
-                                        <button type="button" class="btn btn-warning">Beli</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col wrapCenter">
-                                        <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail-Small innerCenter-0" />
-                                    </div>
-                                    <div class="col SideBarThumbNail">
-                                        <b>Nama buku gj </b>
-                                        <b>****</b>
-                                        Rp 1
-                                        <button type="button" class="btn btn-warning">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row sidebar">
-                        <div class="list-group" style="width:100%">
-                            <div class="list-group-item list-group-item-warning titleBar">
-                                <h5>Testimonial</h5>
-                            </div>
-                            <div class="list-group-item textTestimonial">
-                                <div class="row wrapCenter">
-                                    <div class="innerCenter-0">
-                                        <p>
-                                            xxxyyzzzasdasdasdsaaaa
-                                            aaaaaaaaaaaaadasda
-                                            dddddddddddddddsdfsdfsd
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row wrapCenter">
-                                    <div class="innerCenter innerCenter-1rem">
-                                        <img src="<?php echo base_url() ?>img/face.jpg" class="rounded-circle tilesHorizontalThumbNail-Small thumbnailTestimonial" />
-                                    </div>
-                                    <div class="innerCenter innerCenter-1rem">
-                                        <h5>Aedhelio Homo</h5>
-                                        <h6><i>aku suka cowo loh</i></h6>
-                                        <hr />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php include 'sidebar.php'; ?>
                 <!--CONTENT-->
                 <div class="col-md-10 highlight container mx-auto">
                     <div class="titleSection" style="margin-top:5px">
                         <h2>Terpopuler</h2>
                     </div>
                     <div class="row terpopulerChild paddingLR5percent">
+                        <?php
+                            foreach($terpopuler as $p){
+                        ?>
                         <div class="col-md thumbVertical">
                             <div class="row wrapCenter">
-                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
+                                <img src="<?php echo base_url() ?>uploads/<?php echo $p['GAMBAR'] ?>" class="tilesVerticalThumbNail innerCenter-0" />
                             </div>
                            
                             <div class="row tilesVerticalIcons">
@@ -218,30 +150,48 @@
                                 <div class="col thumbnailAction">
                                     <span class="fa fa-exchange" aria-hidden="true"></span>
                                 </div>
-                                <div class="col thumbnailAction">
+                                <div class="col thumbnailAction detail" codeBuku="<?php echo $p['ID_BUKU'] ?>">
                                     <span class="fa fa-eye" aria-hidden="true"></span>
                                 </div>
                             </div>
                             
                             <div class="row desc wrapCenter">
                                 <div class="innerCenter-0">
-                                    <h5>AAAAAAAAAAAAAAAA</h5>
+                                    <h5><?php echo $p['JUDUL'] ?></h5>
                                 </div>
                             </div>
                             <div class="row  wrapCenter">
                                 <div class="rating innerCenter-0">
-                                    *****
+                                    <?php
+                                    for($i = 1; $i<=5; $i++){
+                                        echo (($i<=$p['RATING']) ? ('<i class="fa fa-star"></i>') : ('<i class="fa fa-star-o"></i>'));
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <div class="row wrapCenter">
                                 <div class="price innerCenter-0">
-                                    Rp 1 (Bekas)
+                                    Rp <?php echo $p['HARGA']." (".($p['BEKAS']?'Bekas':'Baru').")"; ?> 
                                 </div>
                             </div>
                         </div>
+                        <?php
+                            }
+                        ?>
+                        
+                        
+                        
+                    </div>
+                    <div class="titleSection">
+                        <h2>Buku Bekas terpopuler</h2>
+                    </div>
+                    <div class="row terpopulerChild paddingLR5percent">
+                        <?php
+                            foreach($bekasterpopuler as $p){
+                        ?>
                         <div class="col-md thumbVertical">
                             <div class="row wrapCenter">
-                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
+                                <img src="<?php echo base_url() ?>uploads/<?php echo $p['GAMBAR'] ?>" class="tilesVerticalThumbNail innerCenter-0" />
                             </div>
                            
                             <div class="row tilesVerticalIcons">
@@ -254,164 +204,37 @@
                                 <div class="col thumbnailAction">
                                     <span class="fa fa-exchange" aria-hidden="true"></span>
                                 </div>
-                                <div class="col thumbnailAction">
+                                <div class="col thumbnailAction detail" codeBuku="<?php echo $p['ID_BUKU'] ?>">
                                     <span class="fa fa-eye" aria-hidden="true"></span>
                                 </div>
                             </div>
                             
                             <div class="row desc wrapCenter">
                                 <div class="innerCenter-0">
-                                    <h5>AAAAAAAAAAAAAAAA</h5>
+                                    <h5><?php echo $p['JUDUL'] ?></h5>
                                 </div>
                             </div>
-                            <div class="row rating wrapCenter">
-                                <div class="innerCenter-0">
-                                    *****
-                                </div>
-                            </div>
-                            <div class="row wrapCenter">
-                                <div class="price innerCenter-0">
-                                    Rp 1 (Bekas)
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md thumbVertical">
-                            <div class="row wrapCenter">
-                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
-                            </div>
-                            
-                            <div class="row tilesVerticalIcons">
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                                </div>
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-heart-o" aria-hidden="true"></span>
-                                </div>
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-exchange" aria-hidden="true"></span>
-                                </div>
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-eye" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                            
-                            <div class="row desc wrapCenter">
-                                <div class="innerCenter-0">
-                                    <h5>AAAAAAAAAAAAAAAA</h5>
-                                </div>
-                            </div>
-                            <div class="row rating wrapCenter">
-                                <div class="innerCenter-0">
-                                    *****
+                            <div class="row  wrapCenter">
+                                <div class="rating innerCenter-0">
+                                    <?php
+                                    for($i = 1; $i<=5; $i++){
+                                        echo (($i<=$p['RATING']) ? ('<i class="fa fa-star"></i>') : ('<i class="fa fa-star-o"></i>'));
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <div class="row wrapCenter">
                                 <div class="price innerCenter-0">
-                                    Rp 1 (Bekas)
+                                    Rp <?php echo $p['HARGA']." (".($p['BEKAS']?'Bekas':'Baru').")"; ?> 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md thumbVertical">
-                            <div class="row wrapCenter">
-                                <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
-                            </div>
-                            
-                            <div class="row tilesVerticalIcons">
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                                </div>
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-heart-o" aria-hidden="true"></span>
-                                </div>
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-exchange" aria-hidden="true"></span>
-                                </div>
-                                <div class="col thumbnailAction">
-                                    <span class="fa fa-eye" aria-hidden="true"></span>
-                                </div>
-                            </div>
-                            
-                            <div class="row desc wrapCenter">
-                                <div class="innerCenter-0">
-                                    <h5>AAAAAAAAAAAAAAAA</h5>
-                                </div>
-                            </div>
-                            <div class="row rating wrapCenter">
-                                <div class="innerCenter-0">
-                                    *****
-                                </div>
-                            </div>
-                            <div class="row wrapCenter">
-                                <div class="price innerCenter-0">
-                                    Rp 1 (Bekas)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="titleSection">
-                        <h2>Buku Bekas terpopuler</h2>
-                    </div>
-                    <div class="row paddingLR50px">
-                        <div class="col-md">
-                            <div class="row bekasChild">
-                                <div class="col-5 wrapCenter">
-                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
-                                </div>
-                                <div class="col horizdescBox">
-                                    <h4>Nama buku gj </h4>
-                                    <blockquote>
-                                        kondisi zaasasassa
-                                    </blockquote>
-                                    <h5>****</h5>
-                                    <h5>Rp 1</h5>
-                                    <button type="button" class="btn btn-warning">Beli</button>
-                                </div>
-                            </div>
-                            <div class="row bekasChild">
-                                <div class="col-5 wrapCenter">
-                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
-                                </div>
-                                <div class="col horizdescBox">
-                                    <h4>Nama buku gj </h4>
-                                    <blockquote>
-                                        kondisi zaasasassa
-                                    </blockquote>
-                                    <h5>****</h5>
-                                    <h5>Rp 1</h5>
-                                    <button type="button" class="btn btn-warning">Beli</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="row bekasChild">
-                                <div class="col-5 wrapCenter">
-                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
-                                </div>
-                                <div class="col horizdescBox">
-                                    <h4>Nama buku gj </h4>
-                                    <blockquote>
-                                        kondisi zaasasassa
-                                    </blockquote>
-                                    <h5>****</h5>
-                                    <h5>Rp 1</h5>
-                                    <button type="button" class="btn btn-warning">Beli</button>
-                                </div>
-                            </div>
-                            <div class="row bekasChild">
-                                <div class="col-5 wrapCenter">
-                                    <img src="<?php echo base_url() ?>img/placeholder.png" class="tilesHorizontalThumbNail innerCenter-0" />
-                                </div>
-                                <div class="col horizdescBox">
-                                    <h4>Nama buku gj </h4>
-                                    <blockquote>
-                                        kondisi zaasasassa
-                                    </blockquote>
-                                    <h5>****</h5>
-                                    <h5>Rp 1</h5>
-                                    <button type="button" class="btn btn-warning">Beli</button>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        ?>
+                        
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -420,6 +243,14 @@
     </div>
     <script src="<?php echo base_url() ?>script/handler.js"></script>
     <script src="<?php echo base_url() ?>script/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".detail").click(function(){
+                var id = $(this).attr('codeBuku');
+                window.open("buy?id="+id, "_self");
+            });
+        });
+    </script>
 </body>
 
 </html>

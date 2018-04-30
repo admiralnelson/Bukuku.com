@@ -26,75 +26,8 @@
 </head>
 <body>
     <div class="container-fluid header" style="padding:0">
-        <div class="menubar parentMenu">
-            <div class="container-fluid max1080p">
-                <div class="row">
-                    <div class="col-lg-3 CenterContainer menuDecoration wrapCenter logo" id="logo">
-                        <!--<div class="CenterContainer-Child" style="height:80px;width:270px;background:blue">placeholder</div>-->
-                        <div class="innerCenter">
-                            <img src="img/logo.png" style="width:100%" />
-                        </div>
-                    </div>
-                    <div class="col-lg-7  menuDecoration wrapCenter">
-                        <div class="input-group innerCenter">
-                            <input type="text" class="form-control" aria-label="">
-                            <div class="input-group-append">
-                                <div class="dropdown show">
-                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pilih Kategori
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">zzz</a>
-                                        <a class="dropdown-item" href="#">zzzzzzzz</a>
-                                        <a class="dropdown-item" href="#">Szzzzzzzss</a>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-warning">Cari</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2  menuDecoration wrapCenter">
-                        <div class="input-group innerCenter">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text" id="btnGroupAddon2">Rp 0</div>
-                            </div>
-                            <button type="button" class="btn btn-warning">Keranjang</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row paddingLR50px">
-                    <div class="col-lg-2 toolbar-left">
-                        <div class="dropdown dropdown btn-flex " style="width:100%">
-                            <button class="btn btn-secondary btn-warning btn-lg" style="border-radius:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kategori
-                            </button>
-                            <div class="dropdown-menu btn-flex" style="width:100%" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Buku</a>
-                                <a class="dropdown-item" href="#">Buku2</a>
-                                <a class="dropdown-item" href="#">Buku3</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 toolbar-right">
-                        <div class="btn-group btn-group-lg" style="border-radius:0" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-dark">Beranda</button>
-                            <button type="button" class="btn btn-dark">Buku</button>
-                            <button type="button" class="btn btn-dark">Forum</button>
-                            <button type="button" class="btn btn-dark">Info</button>
-                            <button type="button" class="btn btn-dark">Blog</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 toolbar-right wrapCenter2">
-                        <div class="innerCenter" style="padding:0px">
-                            <button type="button" class="btn btn-warning">Sign Up / Login</button>
-                        </div>
-                    </div>
-                </div>
-                <!--<div class="navbar vbottom childMenu">
-
-            </div>-->
-            </div>
-        </div>
+        
+        <?php include 'header.php'; ?>
 
         <div class="container-fluid content max1080p">
             <div class="row">
@@ -107,22 +40,9 @@
                         </div>
                         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:500px;height:500px;overflow:hidden;">
                             <div data-p="170.00">
-                                <img data-u="image" src="img/placeholder.png" />
-                                <img data-u="thumb" src="img/placeholder-thmb.png" />
+                                <img data-u="image" src="uploads/<?php echo $GAMBAR; ?>" />
+                                <img data-u="thumb" src="uploads/<?php echo $GAMBAR; ?>" />
                             </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="img/placeholder.png" />
-                                <img data-u="thumb" src="img/placeholder-thmb.png" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="img/placeholder.png" />
-                                <img data-u="thumb" src="img/placeholder-thmb.png" />
-                            </div>
-                            <div data-p="170.00">
-                                <img data-u="image" src="img/placeholder.png" />
-                                <img data-u="thumb" src="img/placeholder-thmb.png" />
-                            </div>
-
                         </div>
                         <!-- Thumbnail Navigator -->
                         <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;bottom:0px;width:980px;height:100px;" data-autocenter="1" data-scale-bottom="0.75">
@@ -154,20 +74,20 @@
                 <div class="col-md-6">
                     <div class="descSection">
                         <!--DESC SECTION-->
-                        <h1 class="bukuTitle">zzzzzzzzzz</h1>
-                        <h3 id="bukuRating">*****</h3>
-                        <h5 id="bukuHarga">Rp 1</h5>
-                        <h5 id="bukuHarga">Tersedia 1 unit</h5>
+                        <h1 class="bukuTitle"><?php echo $JUDUL; ?></h1>
+                        <h3 id="bukuRating">
+                            <?php
+                                for($i = 1; $i<=5; $i++){
+                                    echo (($i<=$RATING) ? ('<i class="fa fa-star"></i>') : ('<i class="fa fa-star-o"></i>'));
+                                }
+                            ?>
+                            
+                        </h3>
+                        <h5 id="bukuHarga">Rp <?php echo $HARGA; ?></h5>
+                        <h5 id="bukuHarga">Tersedia <?php echo $JUMLAH; ?> unit</h5>
                         <br />
                         <p id="bukuDesc">
-                            Data xyzData xyz Data xyzData xyzData xyzData xyzData xyzData xyzData xyzData 
-                            xyzData xyzData xyzData xyzData xyzData xyzData xyzData 
-                            Data xyzData xyz Data xyzData xyzData xyzData xyzData xyzData xyzData xyzData
-                            xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyz
-                            Data xyzData xyz Data xyzData xyzData xyzData xyzData xyzData xyzData xyzData
-                            xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyz
-                            Data xyzData xyz Data xyzData xyzData xyzData xyzData xyzData xyzData xyzData
-                            xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzData xyzxyzData xyz
+                            <?php echo $DESKRIPSI; ?>
                         </p>
 
                         <button type="button" class="btn btn-lg btn-warning">Beli</button>
@@ -188,18 +108,8 @@
                     <div class="col-9 commentSection">
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                <h1 class="bukuTitle">zzzzzzzzzz</h1>
-                                <p>Cillum ad ut irure te
-                                mpor velit no
-                                strud occaecat ullamco aliqua anim Lorem si
-                                nt. Veniam sint duis incididunt do esse m
-                                agna mollit excepteur laborum qui. I
-                                d id reprehenderit sit est eu aliqua occa
-                                ecat quis et velit exce
-                                pteur laborum mollit dolore eiusm
-                                od. Ipsum dolor in occaecat commodo e
-                                t voluptate minim reprehenderit mollit pariatur. Des
-                                erunt non laborum enim et cillum eu deserunt excepteur ea incididunt minim occaecat.</p>
+                                <h1 class="bukuTitle"><?php echo $JUDUL; ?></h1>
+                                <p><?php echo $DESKRIPSI; ?></p>
                             </div>
                             <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                 <p>Culpa dolor voluptate do laboris laboris irure reprehen
@@ -220,241 +130,12 @@
                     </div>
                 </div>
             </div>
-            <div class="terkaitSection">
-                <div class="row" style="margin:20px">
-                    <h1>Produk terkait</h1>
-                </div>
-                <div class="row terpopulerChild wrapCenter">
-                    <div class="col-md thumbVertical innerCenter-0">
-                        <div class="row wrapCenter">
-                            <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
-                        </div>
-
-                        <div class="row tilesVerticalIcons">
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-heart-o" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-exchange" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-eye" aria-hidden="true"></span>
-                            </div>
-                        </div>
-
-                        <div class="row desc wrapCenter">
-                            <div class="innerCenter-0">
-                                <h5>AAAAAAAAAAAAAAAA</h5>
-                            </div>
-                        </div>
-                        <div class="row  wrapCenter">
-                            <div class="rating innerCenter-0">
-                                *****
-                            </div>
-                        </div>
-                        <div class="row wrapCenter">
-                            <div class="price innerCenter-0">
-                                Rp 1 (Bekas)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md thumbVertical">
-                        <div class="row wrapCenter">
-                            <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
-                        </div>
-
-                        <div class="row tilesVerticalIcons">
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-heart-o" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-exchange" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-eye" aria-hidden="true"></span>
-                            </div>
-                        </div>
-
-                        <div class="row desc wrapCenter">
-                            <div class="innerCenter-0">
-                                <h5>AAAAAAAAAAAAAAAA</h5>
-                            </div>
-                        </div>
-                        <div class="row rating wrapCenter">
-                            <div class="innerCenter-0">
-                                *****
-                            </div>
-                        </div>
-                        <div class="row wrapCenter">
-                            <div class="price innerCenter-0">
-                                Rp 1 (Bekas)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md thumbVertical">
-                        <div class="row wrapCenter">
-                            <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
-                        </div>
-
-                        <div class="row tilesVerticalIcons">
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-heart-o" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-exchange" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-eye" aria-hidden="true"></span>
-                            </div>
-                        </div>
-
-                        <div class="row desc wrapCenter">
-                            <div class="innerCenter-0">
-                                <h5>AAAAAAAAAAAAAAAA</h5>
-                            </div>
-                        </div>
-                        <div class="row rating wrapCenter">
-                            <div class="innerCenter-0">
-                                *****
-                            </div>
-                        </div>
-                        <div class="row wrapCenter">
-                            <div class="price innerCenter-0">
-                                Rp 1 (Bekas)
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md thumbVertical">
-                        <div class="row wrapCenter">
-                            <img src="img/placeholder.png" class="tilesVerticalThumbNail innerCenter-0" />
-                        </div>
-
-                        <div class="row tilesVerticalIcons">
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-shopping-cart" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-heart-o" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-exchange" aria-hidden="true"></span>
-                            </div>
-                            <div class="col thumbnailAction">
-                                <span class="fa fa-eye" aria-hidden="true"></span>
-                            </div>
-                        </div>
-
-                        <div class="row desc wrapCenter">
-                            <div class="innerCenter-0">
-                                <h5>AAAAAAAAAAAAAAAA</h5>
-                            </div>
-                        </div>
-                        <div class="row rating wrapCenter">
-                            <div class="innerCenter-0">
-                                *****
-                            </div>
-                        </div>
-                        <div class="row wrapCenter">
-                            <div class="price innerCenter-0">
-                                Rp 1 (Bekas)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            <?php include 'related.php'; ?>
         </div>
         
-        <div class="container-fluid foot max1080p" style="color:white">
-            <div class="row signup">
-                <div class="col-lg-2 wrapCenter toolbar-right">
-                    <div class="innerCenter innerCenter-1rem">
-                        place holder berlangganan:
-                    </div>
-                </div>
-                <div class="col-lg-7 wrapCenter toolbar-right">
-                    <div class="input-group innerCenter innerCenter-1rem">
-                        <input type="text" class="form-control" aria-label="">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-warning">Berlangganan</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wrapCenter toolbar-right">
-                    <div class="innerCenter innerCenter-1rem" style="text-align:middle">
-                        Follow di:
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-facebook"></a>
+        <?php include 'footer.php'; ?>
 
-                    </div>
-                </div>
-            </div>
-            <div class="row sitemap max1080p">
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <img src="img/logo.png" />
-                        <p>
-                            <br />
-                            blababalballbablasljsbaflbsaf3
-                            <address>Address: Andakasa</address>
-                            <address>Phone  : 0</address>
-                            <address>Email: bukuku[at]bukuku[dot]com</address>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <h3>Company</h3>
-                        <div style="margin-top:20px">
-                            <ul>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <h3>Policy Info</h3>
-                        <div style="margin-top:20px">
-                            <ul>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <h3>Something</h3>
-                        <div style="margin-top:20px">
-                            <ul>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="script/handler.js"></script>
     <script src="script/main.js"></script>

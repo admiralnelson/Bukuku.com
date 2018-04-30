@@ -246,7 +246,8 @@ input[type="text"], textarea, button {
     width: 100%;
     height: 100%;
     max-width: 280px;
-    /*max-height:330px;
+    max-height:280px;
+    /*
     max-width:210px*/
 }
 

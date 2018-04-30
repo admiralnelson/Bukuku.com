@@ -222,7 +222,7 @@
                 <!--CONTENT-->
                 <div class="col-md-10 highlight max1080p">
                     <div class="titleSection" style="margin-top:5px">
-                        <h2 id="result-txt">Hasil pencarian untuk: "{searchTerms}"</h2>
+                        <h2 id="result-txt">Hasil pencarian untuk: ""</h2>
                     </div>
                     <div class="col" id="Content">
                         
@@ -231,63 +231,8 @@
             </div>
         </div>
 
-        <div class="row sitemap max1080p" style="margin:0">
-            <div class="col-md">
-                <div class="sitemap-child">
-                    <img src="img/logo2.png" />
-                    <p>
-                        <br />
-                        blababalballbablasljsbaflbsaf3
-                        <address>Address: Andakasa</address>
-                        <address>Phone  : 0</address>
-                        <address>Email: bukuku[at]bukuku[dot]com</address>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="sitemap-child">
-                    <h3>Company</h3>
-                    <div style="margin-top:20px">
-                        <ul>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="sitemap-child">
-                    <h3>Policy Info</h3>
-                    <div style="margin-top:20px">
-                        <ul>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="sitemap-child">
-                    <h3>Something</h3>
-                    <div style="margin-top:20px">
-                        <ul>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php include 'footer.php' ?>
+
     <script src="<?php echo base_url() ?>script/handler.js"></script>
     <script src="<?php echo base_url() ?>script/main.js"></script>
     <script src="<?php echo base_url() ?>script/inventory/DataLoader.js"></script>
