@@ -39,7 +39,7 @@ class Search extends CI_Controller {
 				$buku = $this->m_buku->getByJudul($value);
 				break;
 			default:
-				$buku = array();
+				$buku = getAll();
 				break;
 		}
 		

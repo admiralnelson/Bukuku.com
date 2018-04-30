@@ -26,87 +26,8 @@
 </head>
 <body>
     <div class="container-fluid header" style="padding:0">
-        <div class="menubar parentMenu">
-            <div class="container-fluid max1080p">
-                <div class="row">
-                    <div class="col-lg-3 CenterContainer menuDecoration wrapCenter logo" id="logo">
-                        <!--<div class="CenterContainer-Child" style="height:80px;width:270px;background:blue">placeholder</div>-->
-                        <div class="innerCenter">
-                            <img src="<?php echo base_url() ?>img/logo.png" style="width:100%" />
-                        </div>
-                    </div>
-                    <div class="col-lg-7  menuDecoration wrapCenter">
-                        <div class="input-group innerCenter">
-                            <input type="text" class="form-control" aria-label="">
-                            <div class="input-group-append">
-                                <div class="dropdown show">
-                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pilih Kategori
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">zzz</a>
-                                        <a class="dropdown-item" href="#">zzzzzzzz</a>
-                                        <a class="dropdown-item" href="#">Szzzzzzzss</a>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-warning">Cari</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2  menuDecoration wrapCenter">
-                        <div class="input-group innerCenter">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text" id="btnGroupAddon2">Rp 0</div>
-                            </div>
-                            <button type="button" class="btn btn-warning">Keranjang</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row paddingLR50px">
-                    <div class="col-lg-2 toolbar-left">
-                        <div class="dropdown dropdown btn-flex " style="width:100%">
-                            <button class="btn btn-secondary btn-warning btn-lg" style="border-radius:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kategori
-                            </button>
-                            <div class="dropdown-menu btn-flex" style="width:100%" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Buku</a>
-                                <a class="dropdown-item" href="#">Buku2</a>
-                                <a class="dropdown-item" href="#">Buku3</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 toolbar-right">
-                        <div class="btn-group btn-group-lg" style="border-radius:0" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-dark">Beranda</button>
-                            <button type="button" class="btn btn-dark">Buku</button>
-                            <button type="button" class="btn btn-dark">Forum</button>
-                            <button type="button" class="btn btn-dark">Info</button>
-                            <button type="button" class="btn btn-dark">Blog</button>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 toolbar-right wrapCenter2">
-                        <div class="innerCenter" style="padding:0px">
-                            <?php 
-                                if($this->session->has_userdata('username')){
-                            ?>
-                            <a href="<?php echo base_url() ?>Profil"><button type="button" class="btn btn-warning"><?php echo $this->session->userdata('nama') ?></button></a>
-                            
-                            <?php
-                                } else {
-
-                            ?>
-                            <a href="<?php echo base_url() ?>Login"><button type="button" class="btn btn-warning">Sign Up / Login</button></a>
-                            <?php
-                                }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <!--<div class="navbar vbottom childMenu">
-
-            </div>-->
-            </div>
-        </div>
+        
+        <?php include 'header.php' ?>
 
         <div class="container-fluid content max1080p">
             <div class="row">
@@ -152,88 +73,8 @@
             </div>
         </div>
         
-        <div class="container-fluid foot max1080p" style="color:white">
-            <div class="row signup">
-                <div class="col-lg-2 wrapCenter toolbar-right">
-                    <div class="innerCenter innerCenter-1rem">
-                        place holder berlangganan:
-                    </div>
-                </div>
-                <div class="col-lg-7 wrapCenter toolbar-right">
-                    <div class="input-group innerCenter innerCenter-1rem">
-                        <input type="text" class="form-control" aria-label="">
-                        <div class="input-group-append">
-                            <button type="button" class="btn btn-warning">Berlangganan</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 wrapCenter toolbar-right">
-                    <div class="innerCenter innerCenter-1rem" style="text-align:middle">
-                        Follow di:
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-facebook"></a>
+        <?php include 'footer.php'; ?>
 
-                    </div>
-                </div>
-            </div>
-            <div class="row sitemap max1080p">
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <img src="<?php echo base_url() ?>img/logo.png" />
-                        <p>
-                            <br />
-                            blababalballbablasljsbaflbsaf3
-                            <address>Address: Andakasa</address>
-                            <address>Phone  : 0</address>
-                            <address>Email: bukuku[at]bukuku[dot]com</address>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <h3>Company</h3>
-                        <div style="margin-top:20px">
-                            <ul>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <h3>Policy Info</h3>
-                        <div style="margin-top:20px">
-                            <ul>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md">
-                    <div class="sitemap-child">
-                        <h3>Something</h3>
-                        <div style="margin-top:20px">
-                            <ul>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="<?php echo base_url() ?>script/handler.js"></script>
     <script src="<?php echo base_url() ?>script/main.js"></script>
