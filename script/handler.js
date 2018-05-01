@@ -64,3 +64,32 @@ function ShowSnackbar(text) {
     x.className = "show";
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
+
+function getURLData(){
+    var query = window.location.search.substring(1);
+    var vars = query.split('&')[0];
+    return vars.split('=');
+}
+
+function getEtalase(table){
+    
+    $.post('Etalase/getEtalase', function(data){
+        var etalase = $.parseJSON(data);
+        
+        
+        for(var i = 0; i<etalase.length; i++){
+            var rating = "";
+            for(var s=1; s<=5; s++){
+                rating += (s<=etalase[i].RATING ? '<i class="fa fa-star"></i>' : '<i class="fa fa-star-o"></i>');
+            }
+            table.row.add([
+                i+1,
+                etalase[i].JUDUL,
+                etalase[i].HARGA,
+                etalase[i].KATEGORI,
+                rating,
+                '<button class="btn btn-sm btn-warning" style="margin-right: 5px"><i class="fa fa-edit"></i></button><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>'
+            ]).draw().node();
+        }
+    });
+}

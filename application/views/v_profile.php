@@ -76,7 +76,6 @@
         <?php include 'footer.php'; ?>
 
     </div>
-    <script src="<?php echo base_url() ?>script/handler.js"></script>
-    <script src="<?php echo base_url() ?>script/main.js"></script>
+    
 </body>
 </html>

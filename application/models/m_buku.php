@@ -49,6 +49,11 @@ class M_Buku extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function getEtalase($username){
+		$query = $this->db->query("SELECT * FROM buku WHERE username = '$username'");
+		return $query->result_array();
+	}
+
 	public function getNew($count){
 		$query = $this->db->query("SELECT * FROM buku LIMIT $count");
 		return $query->result_array();

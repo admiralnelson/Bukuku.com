@@ -30,7 +30,9 @@ class Jual extends CI_Controller {
 	}
 
 	public function tambah_buku(){
-		
+		/*
+			Rizaldo Laksana (1301164371)
+		*/
 		if(!$this->session->has_userdata('username')){
 			redirect('Home');
 		}

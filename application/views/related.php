@@ -23,7 +23,7 @@
 
                     <div class="col-md thumbVertical innerCenter-0">
                         <div class="row wrapCenter">
-                            <img src="uploads/<?php echo $r['GAMBAR']; ?>" class="tilesVerticalThumbNail innerCenter-0" />
+                            <img src="<?php echo base_url() ?>uploads/<?php echo $r['GAMBAR']; ?>" class="tilesVerticalThumbNail innerCenter-0" />
                         </div>
 
                         <div class="row tilesVerticalIcons">

@@ -1,3 +1,41 @@
+<script type="text/javascript">
+    function cari(){
+        var title = $("#cari-title").val();
+        window.open("search?title="+title, '_self');
+    }
+    
+    var isLoggedIn = <?php echo ($this->session->has_userdata('username') ? 'true;' : 'false;'); ?>
+    <?php
+    if($this->session->has_userdata('username')){
+        ?>
+        var username = <?php echo "'".$this->session->userdata('username')."'"; ?>;
+        <?php
+    } else {
+        echo "var username = null;";
+    }   
+    ?>
+    
+    $(document).ready(function(){
+        var dataURL = getURLData();
+        if(dataURL[0] == 'title'){
+           $("#cari-title").val(dataURL[1]); 
+        }
+        $('#cari-title').on('keydown', function(e) {
+             if (e.which == 13) {
+                cari();
+            }
+        });
+        //InitializeInventory();
+    });
+</script>
+<style type="text/css">
+    .fa-star {
+        color: gold;
+    }
+    .fa-star-o {
+        color: gold;
+    }
+</style>
 <div id="snackbar" class="max1080p"><h3></h3></div>
         <div class="menubar parentMenu">
             <div class="container-fluid max1080p">
@@ -5,7 +43,7 @@
                     <div class="col-lg-3 CenterContainer menuDecoration wrapCenter logo" id="logo">
                         <!--<div class="CenterContainer-Child" style="height:80px;width:270px;background:blue">placeholder</div>-->
                         <div class="innerCenter">
-                            <img src="img/logo.png" style="width:100%" />
+                            <img src="<?php echo base_url() ?>img/logo.png" style="width:100%" />
                         </div>
                     </div>
                     <div class="col-lg-7  menuDecoration wrapCenter">
@@ -17,32 +55,39 @@
                                         Pilih Kategori
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">zzz</a>
-                                        <a class="dropdown-item" href="#">zzzzzzzz</a>
-                                        <a class="dropdown-item" href="#">Szzzzzzzss</a>
+                                        <a class="dropdown-item" href="search?Kategori=Seks">Seks</a>
+                                        <a class="dropdown-item" href="search?Kategori=Komputer">Komputer</a>
+                                        <a class="dropdown-item" href="search?Kategori=Novel">Novel</a>
+                                        <a class="dropdown-item" href="search?Kategori=Komik">Komik</a>
+                                        <a class="dropdown-item" href="search?Kategori=Horor">Horor</a>
+                                        <a class="dropdown-item" href="search?Kategori=Cinta">Cinta</a>
+                                        <a class="dropdown-item" href="search?Kategori=Filsafat">Filsafat</a>
+                                        <a class="dropdown-item" href="search?Kategori=Hukum">Hukum</a>
+                                        <a class="dropdown-item" href="search?Kategori=Sosial">Sosial</a>
+                                        <a class="dropdown-item" href="search?Kategori=Ekonomi">Ekonomi</a>
+                                        <a class="dropdown-item" href="search?Kategori=Matematika">Matematika</a>
+                                        <a class="dropdown-item" href="search?Kategori=Kimia">Kimia</a>
+                                        <a class="dropdown-item" href="search?Kategori=Bahasa">Bahasa</a>
+                                        <a class="dropdown-item" href="search?Kategori=Lain-lain">Lain-lain</a>
                                     </div>
                                 </div>
-                                <script type="text/javascript">
-                                    function cari(){
-                                        var title = $("#cari-title").val();
-                                        window.open("search?title="+title, '_self');
-                                    }
-                                    $('#cari-title').on('keydown', function(e) {
-                                        if (e.which == 13) {
-                                            cari();
-                                        }
-                                    });
-                                </script>
+                                
                                 <button type="button" class="btn btn-warning" onclick="cari()">Cari</button>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2  menuDecoration wrapCenter">
                         <div class="input-group innerCenter">
+                            <?php
+                                if($this->session->has_userdata('username')){
+                            ?>
                             <div class="input-group-prepend">
-                                <div class="input-group-text" id="btnGroupAddon2">Rp 0</div>
+                                <div class="input-group-text" id="total-harga">Rp 0</div>
                             </div>
                             <button type="button"  id="Keranjang" data-toggle="modal" data-target="#myModal" class="btn btn-warning">Keranjang</button>
+                            <?php
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -52,16 +97,11 @@
                             <button class="btn btn-secondary btn-warning btn-lg" style="border-radius:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kategori
                             </button>
-                            <div class="dropdown-menu btn-flex" style="width:100%" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Buku</a>
-                                <a class="dropdown-item" href="#">Buku2</a>
-                                <a class="dropdown-item" href="#">Buku3</a>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-8 toolbar-right">
                         <div class="btn-group btn-group-lg" style="border-radius:0" role="group" aria-label="toolbar">
-                            <button type="button" class="btn btn-dark">Beranda</button>
+                            <button type="button" class="btn btn-dark" onclick="window.open('Home', '_self')">Beranda</button>
                             <button type="button" class="btn btn-dark">Buku</button>
                             <button type="button" class="btn btn-dark">Forum</button>
                             <button type="button" class="btn btn-dark">Info</button>
@@ -73,8 +113,17 @@
                             <?php 
                                 if($this->session->has_userdata('username')){
                             ?>
-                                <a href="Profile"><button type="button" class="btn btn-warning"><?php echo $this->session->userdata('nama'); ?></button></a>
-                                <a href="Jual"><button type="button" class="btn btn-warning">Jual Buku</button></a>
+                                <div class="dropdown">
+                                    <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" >Account</button>
+                                    <div class="dropdown-menu dropdown-menu-right" style="width: 200px">
+                                        <h5 class="dropdown-header">Account Veryfied <i class="fa fa-check-circle"></i></h5>
+                                        <h5 class="dropdown-header"><?php echo $this->session->userdata('nama'); ?></h5>
+                                        <a class="dropdown-item" href="Profile">Edit Account</a>
+                                        <a class="dropdown-item" href="Jual">Jual Buku</a>
+                                        <a class="dropdown-item" href="Etalase">Lihat Etalase</a>
+                                        <a class="dropdown-item" href="Logout">Logout</a>
+                                    </div>
+                                </div>
                             <?php
                                 } else {
                             ?>

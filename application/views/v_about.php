@@ -116,8 +116,7 @@ Mount&Blade has received numerous accolades since its release, including multipl
         <?php include 'footer.php'; ?>
 
     </div>
-    <script src="script/handler.js"></script>
-    <script src="script/main.js"></script>
+
 </body>
 
 </html>

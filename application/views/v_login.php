@@ -40,7 +40,7 @@
                     <div class="col-lg-3 CenterContainer menuDecoration wrapCenter logo" id="logo">
                         <!--<div class="CenterContainer-Child" style="height:80px;width:270px;background:blue">placeholder</div>-->
                         <div class="innerCenter">
-                            <img src="img/logo.png" style="width:100%" />
+                            <img src="<?php echo base_url() ?>img/logo.png" style="width:100%" />
                         </div>
                     </div>
                     

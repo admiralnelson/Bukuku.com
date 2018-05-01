@@ -78,7 +78,7 @@
                             <div class="threeSectionDetails">
                                 <button type="button" class="btn btn-warning btn-sm">Discount sampain -100%</button>
                                 <p>
-                                    buruan jgn sampai kehabisan njing
+                                    buruan jgn sampai kehabisan cuy
                                 </p>
                                 
                             </div>
@@ -90,11 +90,11 @@
                         <div class="img-fluid divImgBackground threeSection wrapCenter" style="background-image:url(<?php echo base_url() ?>img/banner/banner5.jpg);">
                             <div class="innerCenter">
                                 <h4 class="threeSectionName">
-                                    zzzzzzzz
+                                    aku suka dibuka tapi tidak dibaca
                                 </h4>
                                 <div class="threeSectionDetails">
                                     <p>
-                                        piece of shit
+                                        kamu jahat mz
                                     </p>
                                     <button type="button" class="btn btn-warning btn-sm">Explore now</button>
                                 </div>
@@ -241,8 +241,7 @@
         </div>
         <?php include "footer.php" ?>
     </div>
-    <script src="<?php echo base_url() ?>script/handler.js"></script>
-    <script src="<?php echo base_url() ?>script/main.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
             $(".detail").click(function(){

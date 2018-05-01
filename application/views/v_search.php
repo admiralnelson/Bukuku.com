@@ -11,7 +11,7 @@
     
     <!--jQuery Plugin-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
-    <link rel="stylesheet" href="css/controls.css" />
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/controls.css" />
  
     <!--bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
@@ -113,32 +113,60 @@
                                                 </button> 
                                                 <div class="dropdown-menu" style="width:100%" aria-labelledby="dropdownMenuButton">
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi1
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Seks
                                                     </div>
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi2
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Komputer
                                                     </div>
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi3
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Novel
                                                     </div>
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi4
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Komik
                                                     </div>
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi5
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Horor
                                                     </div>
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi6
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Cinta
                                                     </div>
                                                     <div class="dropdown-item">
-                                                        <input class="form-check-input" type="checkbox" value="">
-                                                        Fiksi7
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Filsafat
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Hukum
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Sosial
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Ekonomi
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Matematika
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Kimia
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Bahasa
+                                                    </div>
+                                                    <div class="dropdown-item">
+                                                        <input class="form-check-input" type="radio" value="">
+                                                        Lain-lain
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,9 +237,9 @@
                                 <div class="row wrapCenter">
                                     <div class="innerCenter-0">
                                         <blockquote>
-                                            xxxyyzzzasdasdasdsaaaa
-                                            aaaaaaaaaaaaadasdasffsdads
-                                            dddddddddddddddsdfsdfsd
+                                            <div> Bank Asia Central </div>
+                                            <div> Bank Sendiri </div>
+                                            <div> Bank Mage </div>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -233,11 +261,9 @@
 
         <?php include 'footer.php' ?>
 
-    <script src="<?php echo base_url() ?>script/handler.js"></script>
-    <script src="<?php echo base_url() ?>script/main.js"></script>
-    <script src="<?php echo base_url() ?>script/inventory/DataLoader.js"></script>
-    <script src="<?php echo base_url() ?>script/inventory/inventory.js"></script>
+    </div>
     <script>
+        
         SliderInit();
         IntialiseTable();
     </script>
