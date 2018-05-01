@@ -49,4 +49,14 @@ class Keranjang extends CI_Controller {
 	}
 	
 
+	public function deleteBuku()
+	{
+		$username = $this->input->post("username");
+		$bookId = $this->input->post("book");
+
+
+
+		
+	}
+
 }

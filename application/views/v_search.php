@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <!--icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script type="text/javascript">
+        var
+            g_BaseUrl = "<?= base_url() ?>";
+    </script>
 </head>
 <body>
     <div class="container-fluid header" style="padding:0">
@@ -24,40 +28,9 @@
         <?php include 'header.php'; ?>
 
         <!--MODAL WINDOW-->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-lg max1080p">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Inventory</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>fucking</td>
-                                    <td>Faggot</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-buttons">
-                        <button type="button" class="btn btn-secondary float-left" id="ToPage"><code> E </code> Ke halaman lapak</button>
-                        <button type="button" class="btn btn-secondary float-left" id="DropItem"><code> X </code> Drop yang dipilih</button>
-                        <button type="button" class="btn btn-secondary float-left" id="ClearItem"><code> R </code> Kosongkan semua</button>
-
-                        <button type="button" class="btn  btn-secondary float-right" data-dismiss="modal"><code> Esc </code> Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+            include_once("buyWindow.php");
+        ?>
         <div class="container-fluid content max1080p">
             <div class="row paddingLR50px">
                 <!--SIDEBARS-->
@@ -260,13 +233,10 @@
         </div>
 
         <?php include 'footer.php' ?>
-
+        <script>
+            SliderInit();
+        </script>
     </div>
-    <script>
-        
-        SliderInit();
-        IntialiseTable();
-    </script>
 </body>
 
 </html>

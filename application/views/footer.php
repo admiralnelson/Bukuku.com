@@ -78,4 +78,6 @@
         <script src="<?php echo base_url() ?>script/main.js"></script>
         <script src="<?php echo base_url() ?>script/inventory/DataLoader.js"></script>
         <script src="<?php echo base_url() ?>script/inventory/inventory.js"></script>
-        
+        <script>
+                IntialiseTable();
+        </script>

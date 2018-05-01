@@ -97,6 +97,22 @@
                             <button class="btn btn-secondary btn-warning btn-lg" style="border-radius:0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kategori
                             </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="search?kategori=Seks">Seks</a>
+                                        <a class="dropdown-item" href="search?kategori=Komputer">Komputer</a>
+                                        <a class="dropdown-item" href="search?kategori=Novel">Novel</a>
+                                        <a class="dropdown-item" href="search?kategori=Komik">Komik</a>
+                                        <a class="dropdown-item" href="search?kategori=Horor">Horor</a>
+                                        <a class="dropdown-item" href="search?kategori=Cinta">Cinta</a>
+                                        <a class="dropdown-item" href="search?kategori=Filsafat">Filsafat</a>
+                                        <a class="dropdown-item" href="search?kategori=Hukum">Hukum</a>
+                                        <a class="dropdown-item" href="search?kategori=Sosial">Sosial</a>
+                                        <a class="dropdown-item" href="search?kategori=Ekonomi">Ekonomi</a>
+                                        <a class="dropdown-item" href="search?kategori=Matematika">Matematika</a>
+                                        <a class="dropdown-item" href="search?kategori=Kimia">Kimia</a>
+                                        <a class="dropdown-item" href="search?kategori=Bahasa">Bahasa</a>
+                                        <a class="dropdown-item" href="search?kategori=Lain-lain">Lain-lain</a>
+                                    </div>
                         </div>
                     </div>
                     <div class="col-lg-8 toolbar-right">

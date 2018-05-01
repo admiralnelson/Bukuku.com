@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>css/page.css" />
     <link rel="stylesheet" href="<?php echo base_url() ?>css/icons.css" />
 
-
+    <link rel="stylesheet" href="<?php echo base_url() ?>css/controls.css" />
     
     
     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
@@ -29,6 +29,10 @@
 </head>
 <body>
     <div class="container-fluid header" style="padding:0">
+
+         <?php
+            include_once("buyWindow.php");
+        ?>
         
         <?php include 'header.php' ?>
 

@@ -17,7 +17,7 @@ function LoadItemList(input)
             var obj = Data[i][j];
                 item += '<div class="col-md thumbVertical">';
                 item +=     '<div class="row wrapCenter">';
-                item +=         '<img src="http://localhost/tubes/' + obj.thumb + '" class="tilesVerticalThumbNail innerCenter-0" />';
+                item +=         '<img src="'+g_BaseUrl + obj.thumb + '" class="tilesVerticalThumbNail innerCenter-0" />';
                 item +=     '</div>';
 
                 item +=     '<div class="row tilesVerticalIcons">';
